@@ -1,5 +1,6 @@
 import 'package:drivers_app/global/global.dart';
 import 'package:drivers_app/splashScreen/splash_screen.dart';
+import 'package:drivers_app/tabPages/home_tab.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -19,10 +20,8 @@ class _CarInfoScreenState extends State<CarInfoScreen>
   TextEditingController carNumberTextEditingController = TextEditingController();
   TextEditingController carColorTextEditingController = TextEditingController();
 
-  List<String> carTypesList = ["uber-x", "uber-go", "bike"];
+  List<String> carTypesList = ["Sedan", "MiniVan", "Van"];
   String? selectedCarType;
-
-
   saveCarInfo()
   {
     Map driverCarInfoMap =
@@ -37,13 +36,13 @@ class _CarInfoScreenState extends State<CarInfoScreen>
     driversRef.child(currentFirebaseUser!.uid).child("car_details").set(driverCarInfoMap);
 
     Fluttertoast.showToast(msg: "Car Details has been saved, Congratulations.");
-    Navigator.push(context, MaterialPageRoute(builder: (c)=> const MySplashScreen()));
+    Navigator.push(context, MaterialPageRoute(builder: (c)=> HomeTabPage()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -54,7 +53,7 @@ class _CarInfoScreenState extends State<CarInfoScreen>
 
               Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Image.asset("images/logo1.png"),
+                child: Image.asset("images/illustration-3.png"),
               ),
 
               const SizedBox(height: 10,),
@@ -63,84 +62,81 @@ class _CarInfoScreenState extends State<CarInfoScreen>
                 "Write Car Details",
                 style: TextStyle(
                   fontSize: 26,
-                  color: Colors.grey,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(
+                height: 15,
+              ),
+
 
               TextField(
                 controller: carModelTextEditingController,
-                style: const TextStyle(
-                    color: Colors.grey
-                ),
-                decoration: const InputDecoration(
-                  labelText: "Car Model",
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius:
+                    const BorderRadius.all(Radius.circular(14)),
+                    borderSide: BorderSide(
+                        color:
+                        Theme
+                            .of(context)
+                            .colorScheme
+                            .tertiary),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 20, horizontal: 20),
+                  labelText: 'Car Model',
                   hintText: "Car Model",
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
-                  ),
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                  ),
                 ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
 
               TextField(
                 controller: carNumberTextEditingController,
-                style: const TextStyle(
-                    color: Colors.grey
-                ),
-                decoration: const InputDecoration(
-                  labelText: "Car Number",
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius:
+                    const BorderRadius.all(Radius.circular(14)),
+                    borderSide: BorderSide(
+                        color:
+                        Theme
+                            .of(context)
+                            .colorScheme
+                            .tertiary),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 20, horizontal: 20),
+                  labelText: 'Car Number',
                   hintText: "Car Number",
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
-                  ),
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                  ),
                 ),
               ),
-
+              const SizedBox(
+                height: 15,
+              ),
               TextField(
                 controller: carColorTextEditingController,
-                style: const TextStyle(
-                    color: Colors.grey
-                ),
-                decoration: const InputDecoration(
-                  labelText: "Car Color",
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius:
+                    const BorderRadius.all(Radius.circular(14)),
+                    borderSide: BorderSide(
+                        color:
+                        Theme
+                            .of(context)
+                            .colorScheme
+                            .tertiary),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 20, horizontal: 20),
+                  labelText: 'Car Color',
                   hintText: "Car Color",
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 10,
-                  ),
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
-                  ),
                 ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
 
               const SizedBox(height: 10,),
@@ -173,7 +169,7 @@ class _CarInfoScreenState extends State<CarInfoScreen>
                 }).toList(),
               ),
 
-              const SizedBox(height: 20,),
+              const SizedBox(height: 100,),
 
               ElevatedButton(
                 onPressed: ()
@@ -185,8 +181,9 @@ class _CarInfoScreenState extends State<CarInfoScreen>
                     saveCarInfo();
                   }
                 },
+
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.lightGreenAccent,
+                  primary: Color(0xFFF77E21),
                 ),
                 child: const Text(
                   "Save Now",
@@ -195,6 +192,7 @@ class _CarInfoScreenState extends State<CarInfoScreen>
                     fontSize: 18,
                   ),
                 ),
+
               ),
 
             ],

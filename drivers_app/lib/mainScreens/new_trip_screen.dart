@@ -181,7 +181,7 @@ class _NewTripScreenState extends State<NewTripScreen> {
     if (iconAnimatedMarker == null) {
       ImageConfiguration imageConfiguration =
           createLocalImageConfiguration(context, size: const Size(2, 2));
-      BitmapDescriptor.fromAssetImage(imageConfiguration, "images/car.png")
+      BitmapDescriptor.fromAssetImage(imageConfiguration, "images/destination.png")
           .then((value) {
         iconAnimatedMarker = value;
       });

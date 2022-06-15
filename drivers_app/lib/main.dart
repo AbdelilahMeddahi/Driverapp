@@ -1,4 +1,16 @@
+import 'package:drivers_app/authentication/car_info_screen.dart';
+import 'package:drivers_app/authentication/login_screen.dart';
+import 'package:drivers_app/authentication/onbording.dart';
+import 'package:drivers_app/authentication/welcome.dart';
+import 'package:drivers_app/mainScreens/main_screen.dart';
+import 'package:drivers_app/mainScreens/new_trip_screen.dart';
+import 'package:drivers_app/mainScreens/trips_history_screen.dart';
+import 'package:drivers_app/push_notifications/notification_dialog_box%20(1).dart';
 import 'package:drivers_app/splashScreen/splash_screen.dart';
+import 'package:drivers_app/tabPages/earning_tab.dart';
+import 'package:drivers_app/tabPages/home_tab.dart';
+import 'package:drivers_app/tabPages/profile_tab.dart';
+import 'package:drivers_app/tabPages/ratings_tab.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

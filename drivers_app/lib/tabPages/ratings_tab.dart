@@ -108,8 +108,8 @@ class _RatingsTabPageState extends State<RatingsTabPage> {
                 rating: ratingsNumber,
                 allowHalfRating: false,
                 starCount: 5,
-                color: Colors.green,
-                borderColor: Colors.green,
+                color:Color(0xFFF77E21),
+                borderColor: Color(0xFFF77E21),
                 size: 46,
               ),
               const SizedBox(
@@ -120,7 +120,7 @@ class _RatingsTabPageState extends State<RatingsTabPage> {
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green,
+                  color: Color(0xFFF77E21),
                 ),
               ),
               const SizedBox(

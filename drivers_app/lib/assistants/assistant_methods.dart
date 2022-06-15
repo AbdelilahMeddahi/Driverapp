@@ -192,4 +192,6 @@ class AssistantMethods {
 
     readTripsKeysForOnlineDriver(context);
   }
+
+  static readCurrentOnlineUserInfo() {}
 }

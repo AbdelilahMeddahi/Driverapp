@@ -20,16 +20,16 @@ class _EarningsTabPageState extends State<EarningsTabPage> {
         children: [
           //earnings
           Container(
-            color: Colors.black,
+            color: Colors.white,
             width: double.infinity,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 80),
               child: Column(
                 children: [
                   const Text(
-                    "your Earnings:",
+                    "Your Earnings:",
                     style: TextStyle(
-                      color: Colors.grey,
+                      color: Colors.black54,
                       fontSize: 16,
                     ),
                   ),
@@ -37,11 +37,11 @@ class _EarningsTabPageState extends State<EarningsTabPage> {
                     height: 10,
                   ),
                   Text(
-                    "\$ " +
+                    "\DZD " +
                         Provider.of<AppInfo>(context, listen: false)
                             .driverTotalEarnings,
                     style: const TextStyle(
-                      color: Colors.grey,
+                      color: Colors.black54,
                       fontSize: 60,
                       fontWeight: FontWeight.bold,
                     ),
